@@ -5,21 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <h1>Library</h1>
     <p>Keep track of the books you've read!</p>
 
-    <form action="/action_page.php">
-        <label >Book Title:</label><br>
-        <input type="text"  ><br>
-        <label >Author:</label><br>
-        <input type="text" ><br>
-        <label >Pages:</label><br>
-        <input type="text" ><br><br>
-        <input type="submit" value="Submit">
-      </form> 
+    <form action="PayslipServlet" method="get">
 
-      <div id= display></div>
+        Title:    <input type="text" name="title" id="title"><br/>
+        Author:   <input type="text" name="author" id="author"><br/>
+        Pages:  <input type="text" name="pages" id ="pages"><br/>
+        
+        <br><input type="button" value="Submit" onClick="print()">
+    </form>
+    
+
+      <div id= "display"></div>
+
+      <script src= "script.js"></script>
 </body>
+
 </html>
