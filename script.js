@@ -8,18 +8,23 @@ let myLibrary=[
 console.log(myLibrary);
 
 //Object Constructor
-function myBook (author, title, pages){
+function myBook (author, title, pages,read){
     this.author= author;
     this.title=title;
     this.pages=pages;
+    this.read=read;
   
 };
 
 function addBookToLibrary (){
-  let title = inputTitle.value;
-  let author = inputPages.value;
-  let pages = inputAuthor.value;
-  let summary = new myBook (title,author,pages)
+  let inputTitle = document.getElementById("title");
+  let inputAuthor = document.getElementById("author");
+  let inputPages = document.getElementById("pages");
+  let inputRead = document.getElementById("read");
+  title = inputTitle.value;
+  author = inputPages.value;
+  pages = inputAuthor.value;
+  summary = new myBook ( this.title, this.author, this.pages)
   myLibrary.push(summary);
 }
 
@@ -31,9 +36,12 @@ for (let i=0;i<myLibrary.length; i++){
 };
 */
 
-//Allows the table values to be populated for a row
-let submit=document.querySelector("#submit")
-submit.addEventListener("click", print);
+//Allows the table values to be populated.
+let submit=document.querySelector("#submit");
+submit.addEventListener('click', ()=>{
+ print();
+ addBookToLibrary();
+});
 
 function print() {
     document.getElementById("displayTitle").innerHTML = document.getElementById('title').value + " ";
