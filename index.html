@@ -11,7 +11,7 @@
     <h1>Library</h1>
     <p>Keep track of the books you've read!</p>
 
-    <form action="PayslipServlet" method="get">
+    <form >
 
         Title:    <input type="text" name="title" id="title"><br/>
         Author:   <input type="text" name="author" id="author"><br/>
@@ -27,16 +27,14 @@
             <th>Pages</th>
             <th>Read</th>
         </tr>
+        <tr>
+            <td id="displayTitle">Title</td>
+            <td id="displayAuthor">Author</td>
+            <td id="displayPages">Pages</td>
+          </tr>
     </table>
 
-    <h2>
-        <input type="text" id="inputtitle">
-        <input type="text" id="inputauthor">
-        <input type="number" id="inputpages">
-    </h2>
 
-
-      <div id= "display"></div>
 
       <script src= "script.js"></script>
 </body>

@@ -1,7 +1,3 @@
-let display=document.getElementById("display");
-let inputTitle=document.querySelector("#inputtitle");
-let inputPages=document.querySelector("#inputpages");
-let inputAuthor=document.querySelector("#inputauthor");
 
 let myLibrary=[
     {title: "A Game of Thrones",
@@ -12,18 +8,18 @@ let myLibrary=[
 console.log(myLibrary);
 
 //Object Constructor
-function myBook (author, title, pages, read){
+function myBook (author, title, pages){
     this.author= author;
     this.title=title;
     this.pages=pages;
-    this.read=read;    
+  
 };
 
 function addBookToLibrary (){
   let title = inputTitle.value;
   let author = inputPages.value;
   let pages = inputAuthor.value;
-  let summary = new myBook (title,author,pages,read)
+  let summary = new myBook (title,author,pages)
   myLibrary.push(summary);
 }
 
@@ -35,13 +31,13 @@ for (let i=0;i<myLibrary.length; i++){
 };
 */
 
-
+//Allows the table values to be populated for a row
 let submit=document.querySelector("#submit")
 submit.addEventListener("click", print);
 
-
 function print() {
- document.getElementById("display").innerHTML = document.getElementById('title').value + " " + 
-document.getElementById('author').value + " " +
-document.getElementById('pages').value;
+    document.getElementById("displayTitle").innerHTML = document.getElementById('title').value + " ";
+    document.getElementById("displayAuthor").innerHTML=document.getElementById('author').value + " " ;
+    document.getElementById("displayPages").innerHTML=document.getElementById('pages').value +" ";
+
   }
