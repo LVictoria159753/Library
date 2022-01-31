@@ -1,6 +1,5 @@
 //Book objects will be stored in an array
-let myLibrary=[
-];
+let myLibrary=[];
 console.log(myLibrary);
 
 
@@ -31,8 +30,7 @@ function addBookToLibrary (){
 function displayLibrary (){
 for (let i=0;i<myLibrary.length; i++){
     console.log(myLibrary[i]);
-    arrayContents=JSON.stringify(myLibrary)
-    let displayBooks=document.querySelector("#displayBooks").innerHTML=arrayContents;
+    let displayBooks=document.querySelector("#displayBooks").innerHTML= myBook.author + myBook.toString  + myBook.pages + myBook.read;
 }
 
 }
@@ -53,3 +51,21 @@ function print() {
     document.getElementById("displayRead").innerHTML=document.getElementById('read').value +" ";
   }
 
+
+  //creating book card
+  function booktile(){
+  
+ const tile = document.createElement("div");
+
+ tile.style.width = "100px";
+ tile.style.height = "100px";
+ tile.style.background = "red";
+ tile.style.color = "white";
+ tile.innerHTML = "Hello";
+document.querySelector("#container").appendChild(tile);
+  }
+
+myLibrary.forEach(function (){
+  booktile();
+
+});
