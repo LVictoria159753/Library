@@ -28,12 +28,28 @@ function addBookToLibrary (){
 
 //prints array values on page
 function displayLibrary (){
+const container= document.querySelector("container");
+
 for (let i=0;i<myLibrary.length; i++){
     console.log(myLibrary[i]);
     let displayBooks=document.querySelector("#displayBooks").innerHTML= myBook.author + myBook.toString  + myBook.pages + myBook.read;
-}
+
+    let card= createElement("div");
+    let title= createElement("h3");
+    let author= createElement("p");
+    let pages= createElement("p");
+    let status=createElement("label")
+
+
+    card.appendChild(title);
+    card.appendChild(author);
+    card.appendChild(pages);
+  }
 
 }
+
+
+
 
 //Allows the table values to be populated.
 let submit=document.querySelector("#submit");
@@ -52,20 +68,25 @@ function print() {
   }
 
 
+/* Scrap Code
+
   //creating book card
   function booktile(){
   
- const tile = document.createElement("div");
-
- tile.style.width = "100px";
- tile.style.height = "100px";
- tile.style.background = "red";
- tile.style.color = "white";
- tile.innerHTML = "Hello";
-document.querySelector("#container").appendChild(tile);
-  }
-
-myLibrary.forEach(function (){
-  booktile();
-
-});
+    const container= document.querySelector("container");
+     const tile = document.createElement("div");
+    
+     tile.style.width = "100px";
+     tile.style.height = "100px";
+     tile.style.background = "red";
+     tile.style.color = "white";
+     tile.innerHTML = "Hello";
+    container.appendChild(tile)
+      }
+    
+    myLibrary.forEach(function (){
+      booktile();
+    
+    });
+    
+ */
