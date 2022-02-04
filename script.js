@@ -26,15 +26,18 @@ function addBookToLibrary (){
   myLibrary.push(summary);
 }
 
-//prints array values on page
+//display library as well as the cards that pop up
 function displayLibrary (){
 const container= document.querySelector("#container");
 
-for (let i=0;i<myLibrary.length; i++){
+// childElementCount- counts the number of child elements 
+for (let i=container.childElementCount;i<myLibrary.length; i++){
     console.log(myLibrary[i]);
     let displayBooks=document.querySelector("#displayBooks").innerHTML= myBook.author + myBook.toString  + myBook.pages + myBook.read;
 
     let card= document.createElement("div");
+        card.classList.add("card");
+        card.dataset.index = i;
     let title= document.createElement("h3");
       card.textContent=myLibrary[i].title;
     let author= document.createElement("p");

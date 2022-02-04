@@ -7,3 +7,18 @@ body{
 table,td,th, tr{
     border: solid 1px rgb(95, 120, 233);
 }
+
+
+.card {
+    border-radius: 8px;
+    margin: 14px;
+    content: "\a";
+    text-align: center;
+    padding: 12px;
+    color: white;
+    width: 200px;
+    height: 220px;
+    max-height: max-content;
+    background-color: teal;
+    border: solid, 2px green;
+  }
