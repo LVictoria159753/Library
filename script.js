@@ -28,22 +28,25 @@ function addBookToLibrary (){
 
 //prints array values on page
 function displayLibrary (){
-const container= document.querySelector("container");
+const container= document.querySelector("#container");
 
 for (let i=0;i<myLibrary.length; i++){
     console.log(myLibrary[i]);
     let displayBooks=document.querySelector("#displayBooks").innerHTML= myBook.author + myBook.toString  + myBook.pages + myBook.read;
 
-    let card= createElement("div");
-    let title= createElement("h3");
-    let author= createElement("p");
-    let pages= createElement("p");
-    let status=createElement("label")
+    let card= document.createElement("div");
+    let title= document.createElement("h3");
+      card.textContent=myLibrary[i].title;
+    let author= document.createElement("p");
+      card.textContent=myLibrary[i].author;
+    let pages= document.createElement("p");
+      card.textContent=myLibrary[i].pages;
 
 
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
+    container.appendChild(card);
   }
 
 }
