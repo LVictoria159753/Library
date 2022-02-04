@@ -45,7 +45,15 @@ for (let i=container.childElementCount;i<myLibrary.length; i++){
     let pages= document.createElement("p");
       card.textContent=myLibrary[i].pages;
 
+//add a button  
+  let button=document.createElement("div");
+  let deletebutton=document.createElement("button");
+    deletebutton.classList.add("deletebtn");
+    deletebutton.textContent="delete";
+    button.appendChild(deletebutton);
+    container.appendChild(button);
 
+//appending card elements
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);

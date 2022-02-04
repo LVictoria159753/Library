@@ -19,6 +19,13 @@ table,td,th, tr{
     width: 200px;
     height: 220px;
     max-height: max-content;
-    background-color: teal;
-    border: solid, 2px green;
+    background-color: rgb(234, 255, 44);
+    border: solid, 2px rgb(145, 182, 145);
+  }
+
+  .deletebtn{
+      color:red;
+      background-color: rgb(126, 202, 202);
+      padding: 10px 14px;
+      width: 100px;
   }
