@@ -31,46 +31,46 @@ function displayLibrary (){
 const container= document.querySelector("#container");
 
 // childElementCount- counts the number of child elements 
-for (let i=container.childElementCount;i<myLibrary.length; i++){
+for (let i = container.childElementCount;i<myLibrary.length; i++){
     console.log(myLibrary[i]);
     let displayBooks=document.querySelector("#displayBooks").innerHTML= myBook.author + myBook.toString  + myBook.pages + myBook.read;
 
     let card= document.createElement("div");
         card.classList.add("card");
         card.dataset.index = i;
-    let title= document.createElement("h3");
-      card.textContent=myLibrary[i].title;
-    let author= document.createElement("p");
-      card.textContent=myLibrary[i].author;
-    let pages= document.createElement("p");
-      card.textContent=myLibrary[i].pages;
-    let bookstatusread= document.createElement("label")
+          let title= document.createElement("h3");
+              card.textContent=myLibrary[i].title;
+          let author= document.createElement("p");
+              card.textContent=myLibrary[i].author;
+          let pages= document.createElement("p");
+              card.textContent=myLibrary[i].pages;
+          let bookstatusread= document.createElement("label")
 
     let bookstatus= document.createElement("input")
-      bookstatus.type= "checkbox";
-      bookstatus.value= "read"
-      bookstatus.name= "readstatus"
-      bookstatus.id = "status-checkbox";
-      if (myLibrary[i].readstatus === "completed") {
-        bookstatus.checked = true;
-      }
-  
-      if (bookstatus.value === "completed" && bookstatus.checked === true) {
-        myLibrary[i].readStatus = "completed";
-      }
-      let info = document.createElement("span");
+          bookstatus.type= "checkbox";
+          bookstatus.value= "read"
+          bookstatus.name= "readstatus"
+          bookstatus.id = "status-checkbox";
+          if (myLibrary[i].readstatus === "completed") {
+            bookstatus.checked = true;
+          }
+      
+          if (bookstatus.value === "completed" && bookstatus.checked === true) {
+            myLibrary[i].readStatus = "completed";
+          }
+          let info = document.createElement("span");
 
       bookstatusread.appendChild(bookstatus);
       info.textContent = "Finished";
       bookstatusread.appendChild(info);
 
-//add a button  
-  let button=document.createElement("div");
-  let deletebutton=document.createElement("button");
-    deletebutton.classList.add("deletebtn");
-    deletebutton.textContent="delete";
-    button.appendChild(deletebutton);
-    card.appendChild(button);
+      let buttonDiv=document.createElement("div");
+      let deleteButton=document.createElement("button");
+          deleteButton.classList.add("delete-button");
+          deleteButton.textContent= "delete";
+          buttonDiv.appendChild(deleteButton);
+          card.appendChild(buttonDiv);
+          deleteButton.addEventListener('click', myFunction);
 
 //appending card elements
     card.appendChild(title);
@@ -78,16 +78,28 @@ for (let i=container.childElementCount;i<myLibrary.length; i++){
     card.appendChild(pages);
     card.appendChild(bookstatusread);
     container.appendChild(card);
-  }
+  
 
+//deleting the card content
+
+
+
+function myFunction() {
+  myLibrary.splice(card.dataset.index, 1);
+  container.removeChild(card);
+  let children = Array.from(container.childNodes);
+  for (let i = 0; i < children.length; i++) {
+    children[i].dataset.index = i;
+};
 }
+}}
 
 
 
 
 //Allows the table values to be populated.
 let submit=document.querySelector("#submit");
-submit.addEventListener('click', ()=>{
+submit.addEventListener('click', () => {
   print();
   addBookToLibrary();
   displayLibrary();
