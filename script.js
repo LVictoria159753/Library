@@ -100,18 +100,10 @@ function myFunction() {
 //Allows the table values to be populated.
 let submit=document.querySelector("#submit");
 submit.addEventListener('click', () => {
-  print();
   addBookToLibrary();
   displayLibrary();
 });
 
-//prints userinput on the webpage so you can see what is going on. 
-function print() {
-    document.getElementById("displayTitle").innerHTML = document.getElementById('title').value + " ";
-    document.getElementById("displayAuthor").innerHTML=document.getElementById('author').value + " " ;
-    document.getElementById("displayPages").innerHTML=document.getElementById('pages').value +" ";
-    document.getElementById("displayRead").innerHTML=document.getElementById('read').value +" ";
-  }
 
 
 /* Scrap Code
@@ -134,5 +126,26 @@ function print() {
       booktile();
     
     });
+
+    //prints userinput on the webpage so you can see what is going on. 
+function print() {
+    document.getElementById("displayTitle").innerHTML = document.getElementById('title').value + " ";
+    document.getElementById("displayAuthor").innerHTML=document.getElementById('author').value + " " ;
+    document.getElementById("displayPages").innerHTML=document.getElementById('pages').value +" ";
+    document.getElementById("displayRead").innerHTML=document.getElementById('read').value +" ";
+  }
+  print();
+
+
+
+  //html 
+    
+    <table id="container">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read</th>
+        </tr>
     
  */
