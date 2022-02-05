@@ -16,7 +16,8 @@ font-weight: 1px;
     width: 200px;
     height: 220px;
     max-height: max-content;
-    background-color:aqua
+    background-color:aqua;
+    content: "\a";
 
   }
 
@@ -59,4 +60,8 @@ input{
 }
 div label{
     display:flex;
+}
+
+h3 {
+    color:black;
 }

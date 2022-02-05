@@ -38,18 +38,18 @@ for (let i = container.childElementCount;i<myLibrary.length; i++){
     let card= document.createElement("div");
         card.classList.add("card");
         card.dataset.index = i;
-          let title= document.createElement("h3");
-              card.textContent=myLibrary[i].title;
-          let author= document.createElement("p");
-              card.textContent=myLibrary[i].author;
-          let pages= document.createElement("p");
-              card.textContent=myLibrary[i].pages;
-          let bookstatusread= document.createElement("label")
+          let title = document.createElement("h3");
+              title.textContent = myLibrary[i].title;
+          let author = document.createElement("p");
+              author.textContent = myLibrary[i].author;
+          let pages = document.createElement("div");
+              pages.textContent = myLibrary[i].pages;
+          let bookstatusread = document.createElement("label")
 
     let bookstatus= document.createElement("input")
-          bookstatus.type= "checkbox";
-          bookstatus.value= "read"
-          bookstatus.name= "readstatus"
+          bookstatus.type = "checkbox";
+          bookstatus.value = "read"
+          bookstatus.name = "readstatus"
           bookstatus.id = "status-checkbox";
           if (myLibrary[i].readstatus === "completed") {
             bookstatus.checked = true;
@@ -64,13 +64,6 @@ for (let i = container.childElementCount;i<myLibrary.length; i++){
       info.textContent = "Finished";
       bookstatusread.appendChild(info);
 
-      let buttonDiv=document.createElement("div");
-      let deleteButton=document.createElement("button");
-          deleteButton.classList.add("delete-button");
-          deleteButton.textContent= "delete";
-          buttonDiv.appendChild(deleteButton);
-          card.appendChild(buttonDiv);
-          deleteButton.addEventListener('click', myFunction);
 
 //appending card elements
     card.appendChild(title);
@@ -79,11 +72,16 @@ for (let i = container.childElementCount;i<myLibrary.length; i++){
     card.appendChild(bookstatusread);
     container.appendChild(card);
   
+//delete button setup
+    let buttonDiv=document.createElement("div");
+    let deleteButton=document.createElement("button");
+        deleteButton.classList.add("delete-button");
+        deleteButton.textContent= "delete";
+        buttonDiv.appendChild(deleteButton);
+        card.appendChild(buttonDiv);
+        deleteButton.addEventListener('click', myFunction);
 
 //deleting the card content
-
-
-
 function myFunction() {
   myLibrary.splice(card.dataset.index, 1);
   container.removeChild(card);
