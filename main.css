@@ -3,6 +3,10 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #3D7EAA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFE47A, #3D7EAA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFE47A, #3D7EAA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 table,td,th, tr{
     border: solid 1px rgb(95, 120, 233);
@@ -12,20 +16,27 @@ table,td,th, tr{
 .card {
     border-radius: 8px;
     margin: 14px;
-    content: "\a";
     text-align: center;
     padding: 12px;
-    color: white;
     width: 200px;
     height: 220px;
     max-height: max-content;
-    background-color: rgb(234, 255, 44);
-    border: solid, 2px rgb(145, 182, 145);
+    background-color:aqua
+
   }
 
   .deletebtn{
       color:red;
       background-color: rgb(126, 202, 202);
-      padding: 10px 14px;
-      width: 100px;
+      padding: 1px 14px;
+      width: 80px;
+      border-radius: 10px;
+  }
+
+  h3{
+    color:black;
+  }
+
+  p{
+      width:10px
   }

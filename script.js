@@ -44,6 +44,25 @@ for (let i=container.childElementCount;i<myLibrary.length; i++){
       card.textContent=myLibrary[i].author;
     let pages= document.createElement("p");
       card.textContent=myLibrary[i].pages;
+    let bookstatusread= document.createElement("label")
+
+    let bookstatus= document.createElement("input")
+      bookstatus.type= "checkbox";
+      bookstatus.value= "read"
+      bookstatus.name= "readstatus"
+      bookstatus.id = "status-checkbox";
+      if (myLibrary[i].readstatus === "completed") {
+        bookstatus.checked = true;
+      }
+  
+      if (bookstatus.value === "completed" && bookstatus.checked === true) {
+        myLibrary[i].readStatus = "completed";
+      }
+      let info = document.createElement("span");
+
+      bookstatusread.appendChild(bookstatus);
+      info.textContent = "Finished";
+      bookstatusread.appendChild(info);
 
 //add a button  
   let button=document.createElement("div");
@@ -51,12 +70,13 @@ for (let i=container.childElementCount;i<myLibrary.length; i++){
     deletebutton.classList.add("deletebtn");
     deletebutton.textContent="delete";
     button.appendChild(deletebutton);
-    container.appendChild(button);
+    card.appendChild(button);
 
 //appending card elements
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
+    card.appendChild(bookstatusread);
     container.appendChild(card);
   }
 
