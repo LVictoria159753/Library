@@ -33,7 +33,7 @@ const container= document.querySelector("#container");
 // childElementCount- counts the number of child elements 
 for (let i = container.childElementCount;i<myLibrary.length; i++){
     console.log(myLibrary[i]);
-    let displayBooks=document.querySelector("#displayBooks").innerHTML= myBook.author + myBook.toString  + myBook.pages + myBook.read;
+    //let displayBooks=document.querySelector("#displayBooks").innerHTML= myBook.author + myBook.toString  + myBook.pages + myBook.read;
 
     let card= document.createElement("div");
         card.classList.add("card");
