@@ -4,11 +4,11 @@ console.log(myLibrary);
 
 
 //Object Constructor
-function myBook (author, title, pages,read){
-    this.author= author;
-    this.title=title;
-    this.pages=pages;
-    this.read=read;
+function myBook (title, author, pages,read){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
   
 };
 
@@ -22,7 +22,7 @@ function addBookToLibrary (){
   author = inputPages.value;
   pages = inputAuthor.value;
   read= inputRead.value;
-  summary = new myBook ( this.title, this.author, this.pages, this.read)
+  summary = new myBook ( this.title, this.pages, this.author, this.read)
   myLibrary.push(summary);
 }
 

@@ -48,20 +48,20 @@ input{
 }
 
 .delete-button{
-    display:flex;
     color:rgb(47, 149, 218);
     background-color: rgb(217, 226, 226);
     padding: 1px 14px;
     width: 80px;
     border-radius: 10px;
-
-
-
+    margin-top: 15px;
 }
+
 div label{
     display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
 }
 
-h3 {
-    color:black;
-}
+
+
